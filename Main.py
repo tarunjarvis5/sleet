@@ -7,28 +7,30 @@ os.system('color')
 
 print(colored("\n#####################################################################\n","red"))
 print("Sorry for the command line interface we are working on UI")
+print("type in 'help' to display all commands:")
 print(colored("\n#####################################################################\n","red"))
+
+#To create all tables for database
+db.initialize_table()
+
 while True:
-	print("type in 'help' to display all commands:")
+	print("Enter a command: ")
 	command = input()
 	if command == 'help' :
-		print("Type 'timetable'       or '1' to display your timetable ")
-		print("Type 'subject'         or '2' to display your subjects and meet link ")
-		print("Type 'addsubject'      or '3' to add subjects to your subject-list ")
-		print("Type 'addtimetable'    or '4' to add subjects to your time-table ")
-		print("Type 'deletetimetable' or '5' to delete anyday's timetable ")
-		print("Type 'deletesubject'   or '6' to delete any subject for subject-list ")
-		print("Type 'exit' to Exit from SLEET \n")
-		command = input()	
-	else:
-		print("Wrong!!! you literally had to copy the above spelling") 
+		print(colored("Type 'timetable'       or '1' to display your timetable ",'magenta'))
+		print(colored("Type 'subject'         or '2' to display your subjects and meet link ",'magenta'))
+		print(colored("Type 'addsubject'      or '3' to add subjects to your subject-list ",'magenta'))
+		print(colored("Type 'addtimetable'    or '4' to add subjects to your time-table ",'magenta'))
+		print(colored("Type 'deletetimetable' or '5' to delete anyday's timetable ",'magenta'))
+		print(colored("Type 'deletesubject'   or '6' to delete any subject for subject-list ",'magenta'))
+		print(colored("Type 'exit' 		     to Exit from SLEET \n",'magenta'))
+		#command = input()	 
 		
-	
 
-	if command == "timetable" or command == "1" :
+	elif command == "timetable" or command == "1" :
 		db.display_timetable()
 
-	elif command == "subject" or command == "2" :
+	elif command == "subject" or command == "2" or command == "subjects":
 		db.display_subject_list()
 
 	elif command == "addsubject" or command == "3" :
@@ -45,28 +47,11 @@ while True:
 
 	elif command == "exit" :
 		sys.exit("Bye Bye, That's Rude tho")
+	
+	else:
+		print("Wrong!!! you literally had to copy the above spelling")
 
 
 
 
-
-
-
-print("First enter all your g-meet subject and link in the database")
-print("Enter 'yes' if you want to check the subject list in the database: ")
-i = input()
-if i == "yes" :
-	db.print_database()
-
-#b = input("subject")
-#c = input("link")
-db.initial()
-#db.insertinto_subject_list()
-#db.display_subject_list()
-
-db.insertinto_timetable()
-db.display_timetable()
-
-#hile True :
-	#if 0 subject the contin asking for entering subject
 

@@ -4,7 +4,7 @@ from termcolor import colored
 import os
 os.system('color')
 
-# To initialize database and tables in it
+# To connect database
 def initial():
 	#check database file
 	if os.path.isfile('subject_list.db'):
@@ -12,8 +12,19 @@ def initial():
 	else:
 		conn = sqlite3.connect('user_database.db')
 
+	#connect database and make object
 	conn = sqlite3.connect('user_database.db')
+
+	#make a cursor to navigate
 	c = conn.cursor()
+
+	return [c,conn]   
+
+# To initialize database and tables in it
+def initialize_table():
+	infin = initial()
+	c = infin[0]
+	conn = infin[1]
 
 	#create subject_list table in database
 	c.execute("CREATE TABLE IF NOT EXISTS subject_list (subject TEXT, link TEXT)")
@@ -25,7 +36,6 @@ def initial():
 		st = "CREATE TABLE IF NOT EXISTS "+lst[i]+" (lectureNo INT,subject TEXT, time TEXT)"
 		c.execute(st)
 
-	return [c,conn]
 
 # To insert Time table	
 def insertinto_timetable():
@@ -53,37 +63,35 @@ def insertinto_timetable():
 		else:
 			i+=1
 			
-		
-# have to work #####################################################################
+#To insert subject and link for the meeting
 def insertinto_subject_list():
 	while True :
-		#conn = sqlite3.connect('subject_list.db')
-		#c = conn.cursor()
 		infin = initial()
 		c = infin[0]
 		conn = infin[1]
-		b,b1 = input().split()
-		c.execute("INSERT INTO subject_list (subject,link) VALUES(?, ?)",(b, b1))
+		subject = input(colored("Enter subject name : ",'green'))
+		link = input(colored("Enter google-meet link : ",'green'))
+		c.execute("INSERT INTO subject_list (subject,link) VALUES(?, ?)",(subject, link))
 		conn.commit()
-		if input("Do you want to stop adding subject?(enter n)").lower() == "n":
+		if input("\nDo you want to stop adding subject?(y/n)").lower() == "y":
 			break
 	
 	
 
 
-# HAVE TO WORK#######################################################################			
+#To display subject and its meet links			
 def display_subject_list():
-	#conn = sqlite3.connect('subject_list.db')
-	#c = conn.cursor()
 	infin = initial()
 	c = infin[0]
 	conn = infin[1]
 	c.execute("SELECT * FROM subject_list")
 	rows = c.fetchall()
-	print(rows)
+	print("\n")
 	for row in rows:
-		print(row)
+		print(*row)
+	print("\n")
 
+#To display timetable 
 def display_timetable(*week):
 	infin = initial()
 	c = infin[0]
@@ -99,4 +107,10 @@ def display_timetable(*week):
 		print(colored(day+": ","magenta"))
 		for row in rows:
 			print(*row)
+
+#################################################################################################
+def delete_timetable():
+
+
+def delete_subject():
 		
