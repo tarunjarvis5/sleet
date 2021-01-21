@@ -1,26 +1,33 @@
 import sqlite3
 import os
+from termcolor import colored
+import os
+os.system('color')
 
-#have to work #############################################################
+# To initialize database and tables in it
 def initial():
 	#check database file
 	if os.path.isfile('subject_list.db'):
 		pass
 	else:
-		conn = sqlite3.connect('subject_list.db')
+		conn = sqlite3.connect('user_database.db')
 
-	conn = sqlite3.connect('subject_list.db')
+	conn = sqlite3.connect('user_database.db')
 	c = conn.cursor()
 
 	#create subject_list table in database
 	c.execute("CREATE TABLE IF NOT EXISTS subject_list (subject TEXT, link TEXT)")
 
 	#create timetable table in database
-	#c.execute("CREATE TABLE IF NOT EXISTS timetable (lectureNo INT, Mon TEXT, Tue TEXT, Wed TEXT, Thus TEXT ,Fri TEXT, Sat TEXT)")
-	
+	i = 0
+	lst = ["Mon","Tue","Wed","Thus","Fri","Sat","Sun"]
+	for i in range(0,7):	
+		st = "CREATE TABLE IF NOT EXISTS "+lst[i]+" (lectureNo INT,subject TEXT, time TEXT)"
+		c.execute(st)
+
 	return [c,conn]
 
-
+# To insert Time table	
 def insertinto_timetable():
 	i = 0
 	lst = ["Mon","Tue","Wed","Thus","Fri","Sat","Sun"]
@@ -33,12 +40,16 @@ def insertinto_timetable():
 			#c.execute(st)
 			st = "CREATE TABLE IF NOT EXISTS "+lst[i]+" (lectureNo INT,subject TEXT, time TEXT)"
 			c.execute(st)
-			lectureno = input("input lectureno: ")
-			subject = input("input subject: ")
-			time = input("input time in 'HH:MM' 24hours format: ")
+			lectureno = input(colored("Input Lecture No: ",'green'))
+			subject = input(colored("Input Subject: ",'green'))
+			time = input(colored("Time: ",'green'))
+			#time = input("Input Time In 'HH:MM' 24hours Format: ")
 			st = "INSERT INTO "+lst[i]+" (lectureNo,subject,time) VALUES(?, ?, ?)"
 			c.execute(st,(lectureno, subject, time))
 			conn.commit()
+
+			display_timetable(lst[i])
+			print("\n")
 		else:
 			i+=1
 			
@@ -56,17 +67,12 @@ def insertinto_subject_list():
 		conn.commit()
 		if input("Do you want to stop adding subject?(enter n)").lower() == "n":
 			break
-
-def delete_timetable():
 	
-	
-def delete_subject():
 	
 
 
 # HAVE TO WORK#######################################################################			
 def display_subject_list():
-	
 	#conn = sqlite3.connect('subject_list.db')
 	#c = conn.cursor()
 	infin = initial()
@@ -78,11 +84,19 @@ def display_subject_list():
 	for row in rows:
 		print(row)
 
-def display_timetable():
+def display_timetable(*week):
 	infin = initial()
 	c = infin[0]
 	con = infin[1]
-	st = "SELECT * FROM Mon"
-	c.execute(st)
-	rows = c.fetchall()
-	print(rows)
+	if len(week) == 0 :
+		week = ["Mon","Tue","Wed","Thus","Fri","Sat","Sun"]
+	
+	for day in week:
+		st = "SELECT * FROM "+day
+		c.execute(st)
+		print("\n")
+		rows = c.fetchall()
+		print(colored(day+": ","magenta"))
+		for row in rows:
+			print(*row)
+		
