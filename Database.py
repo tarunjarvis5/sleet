@@ -52,7 +52,7 @@ def insertinto_timetable():
 			c.execute(st)
 			lectureno = input(colored("Input Lecture No: ",'green'))
 			subject = input(colored("Input Subject: ",'green'))
-			time = input(colored("Time: ",'green'))
+			time = input(colored("Input Time In 'HH:MM' 24hours Format: ",'green'))
 			#time = input("Input Time In 'HH:MM' 24hours Format: ")
 			st = "INSERT INTO "+lst[i]+" (lectureNo,subject,time) VALUES(?, ?, ?)"
 			c.execute(st,(lectureno, subject, time))
@@ -108,9 +108,33 @@ def display_timetable(*week):
 		for row in rows:
 			print(*row)
 
-#################################################################################################
+#To delete timetable
 def delete_timetable():
+	lst = ["mon","tue","wed","thus","fri","sat","sun","week"]
+	infin = initial()
+	c = infin[0]
+	conn = infin[1]
+	while True:	
+		i = input(colored("This command will delete timetable of that whole day\nDo you want to contin(y/n) :",'red'))
+		if i == "y":
+			i = input("Select a day [Mon,Tue,Wed,thus,Fri,Sat,Sun]: ")
+			if i.lower() in lst:
+				st = "DROP TABLE IF EXISTS "+i
+				c.execute(st)
+				conn.commit()
+				initialize_table()
+				print("Timetable for "+i+" deleted")
+				break
+			else:
+				print("Wrong")
+				break
+		elif i == "n":
+			print("Did not delete anything")
+			break
+		else:
+			print("wrong input: ")
+		
 
 
-def delete_subject():
+#def delete_subject():
 		

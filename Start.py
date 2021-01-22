@@ -16,7 +16,7 @@ print(colored('''
   ssssssss   lllllllllll   eeeeeeee  eeeeeeee      tt       ''','blue'))
 print(colored("\nby Tarun Nair",'red'))
 
-print(colored("\nSleet is a web automation bot based script which allows a user \nto manage their video conference or meet.",'green'))
+print(colored("\nSleet is a script which allows a user \nto manage their video conference or meet.",'green'))
 print(colored("This is version 1.0 of Sleet",'green'))
 print(colored("Sleet is a bot and many websites do not allow bots so",'cyan'))
 print(colored("*winks in binary*",'green'))
@@ -29,5 +29,5 @@ if cont != "y" :
 print("Ensure to type in correct details otherwise the bot won't run and \nmight fail and do something bad\nhe's a bit dumb or she, I don't know we don't discriminate\n")
 email = input("Enter your email-ID : ")
 password = input("Enter you password : ")
-print("\nDon't worry sleet does not save your details,\nyour credentials will be erased after you close the application")
+print(colored("\nDon't worry sleet does not save your details,\nyour credentials will be erased after you close the application",'yellow'))
 
