@@ -11,7 +11,7 @@ def start_initial():
       ss           ll        ee            ee	   tt
         ss         ll        eeeeeeee      eeeeee      tt
           ss       ll        eeeeeeee      eeeeee      tt
-    	ss     ll        ee            ee          tt     
+    	    ss     ll        ee            ee          tt     
               ss  ll          ee          ee           tt     
       ssssssss   lllllllllll   eeeeeeee  eeeeeeee      tt       ''','blue'))
     print(colored("\nby Tarun Nair",'red'))

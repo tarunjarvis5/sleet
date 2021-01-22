@@ -1,6 +1,7 @@
 import Database as db
 import time
 import datetime
+import pyautogui
 #from selenium.webdriver.chrome.options import Options
 from selenium import webdriver
 #subject_name, link, lecture_time, day, email, password
@@ -27,6 +28,7 @@ def sleet_engine(day,email,password):
 	PATH = "F:\chromedriver.exe"	
 	driver = webdriver.Chrome(options=opt, executable_path=PATH)
 
+
 	driver.get("https://stackoverflow.com/users/login?ssrc=head&returnurl=https%3a%2f%2fstackoverflow.com%2f")
 	time.sleep(5)
 	driver.find_element_by_xpath("//*[@id='openid-buttons']/button[1]").click()
@@ -39,8 +41,9 @@ def sleet_engine(day,email,password):
 	time.sleep(5)
 	driver.find_element_by_xpath("//*[@id='passwordNext']/div/button").click()
 	time.sleep(8)
+
 	today = db.get_day(day)
-	print(today)
+
 	for lec in today :
 		subject = lec[1]
 		timelecst = lec[2]
@@ -49,29 +52,42 @@ def sleet_engine(day,email,password):
 		timeminstart = timelecst[-2:]
 		timehourend = timelecnd[:2]
 		timeminsend = timelecnd[-2:]
-		print(subject,timelecst,timelecnd,timeminstart,timeminsend)
+
 		link = db.get_link(subject)
+		print(subject)
 		print(link)
-		e = datetime.datetime.now()
-		print(e.hour,e.minute)
-		print(type(e.hour))
+		print(timelecst)
+		print(timelecnd)
+		print(timehourstart)
+		print(timehourend)
+		print(timeminstart)
+		print(timeminsend)
+		i = 0
 		while True:
-			if e.hour == timehourstart and e.minute == timeminstart :
+
+			if i == 1 :
+				break
+			if datetime.datetime.now().hour == int(timehourstart) and datetime.datetime.now().minute == int(timeminstart) :
+				
 				driver.get(link)
-				time.sleep(8)
-				driver.find_element_by_xpath("//*[@id='yDmH0d']/c-wiz/div/div/div[8]/div[3]/div/div/div[2]/div/div[1]/div[1]/div[1]/div/div[4]/div[1]/div/div/div").click()
-				time.sleep(4)
-				driver.find_element_by_xpath("//*[@id='yDmH0d']/c-wiz/div/div/div[8]/div[3]/div/div/div[2]/div/div[1]/div[1]/div[1]/div/div[4]/div[2]/div/div").click()
-				time.sleep(3)
+				time.sleep(10)
+				pyautogui.hotkey('ctrl', 'd')
+				time.sleep(5)
+				pyautogui.hotkey('ctrl','e')
+				time.sleep(5)
 				driver.find_element_by_xpath("//*[@id='yDmH0d']/c-wiz/div/div/div[8]/div[3]/div/div/div[2]/div/div[1]/div[2]/div/div[2]/div/div[1]/div[1]").click()
-				time.sleep(60)
+				time.sleep(20)
 
 				while True:
-					total = int(timehourend)+int(timeminsend) - int(e.hour)+int(e.minute)
+					total = ((int(timehourend)*60)+int(timeminsend)) - ((int(datetime.datetime.now().hour)*60)+int(datetime.datetime.now().minute))
+
 					if int(total) < 5 :
-						if e.hour == timehourend and e.minute == timeminsend :
-							driver.find_element_by_xpath("//*[@id='ow3']/div[1]/div/div[8]/div[3]/div[9]/div[2]/div[2]/div")
-							time.sleep(5)
+						if datetime.datetime.now().hour == int(timehourend) and datetime.datetime.now().minute == int(timeminsend) :
+							driver.get("https://google.com")
+							time.sleep(10)
+							i = 1
 							break
+					time.sleep(10)
+			time.sleep(10)
 
 
