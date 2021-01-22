@@ -31,3 +31,8 @@ email = input("Enter your email-ID : ")
 password = input("Enter you password : ")
 print(colored("\nDon't worry sleet does not save your details,\nyour credentials will be erased after you close the application",'yellow'))
 
+
+
+
+
+	

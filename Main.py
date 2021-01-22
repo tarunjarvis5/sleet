@@ -2,6 +2,7 @@ import Start as s
 import Database as db
 from termcolor import colored
 import os
+
 import sys
 os.system('color')
 
@@ -47,7 +48,7 @@ while True:
 
 	elif command == "exit" :
 		sys.exit("Bye Bye, That's Rude tho")
-	
+		
 	else:
 		print("Wrong!!! you literally had to copy the above spelling")
 

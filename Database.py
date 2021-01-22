@@ -45,7 +45,7 @@ def insertinto_timetable():
 	c = infin[0]
 	conn = infin[1]
 	while i<=6 : 
-		if input("Do you want to insert for "+lst[i]+" (y/n) :") == "y" :
+		if input("If you want to insert for "+lst[i]+" (y) :") == "y" :
 			#st = "DROP TABLE IF EXISTS "+lst[i]
 			#c.execute(st)
 			st = "CREATE TABLE IF NOT EXISTS "+lst[i]+" (lectureNo INT,subject TEXT, time TEXT)"
@@ -73,8 +73,9 @@ def insertinto_subject_list():
 		link = input(colored("Enter google-meet link : ",'green'))
 		c.execute("INSERT INTO subject_list (subject,link) VALUES(?, ?)",(subject, link))
 		conn.commit()
-		if input("\nDo you want to stop adding subject?(y/n)").lower() == "y":
+		if input("\nDo you want to stop adding subject?(y)").lower() == "y":
 			break
+		
 	
 	
 
@@ -87,8 +88,11 @@ def display_subject_list():
 	c.execute("SELECT * FROM subject_list")
 	rows = c.fetchall()
 	print("\n")
+	i = 1
 	for row in rows:
-		print(*row)
+		print(i,row[0],end=" | ")
+		print(row[1])
+		i+=1
 	print("\n")
 
 #To display timetable 
@@ -106,7 +110,7 @@ def display_timetable(*week):
 		rows = c.fetchall()
 		print(colored(day+": ","magenta"))
 		for row in rows:
-			print(*row)
+			print(row[0],row[1],row[2])
 
 #To delete timetable
 def delete_timetable():
@@ -135,7 +139,7 @@ def delete_timetable():
 			print("wrong input: ")
 		
 
-
+# To delete subject list 
 def delete_subject():
 		infin = initial()
 		c = infin[0]
