@@ -33,7 +33,7 @@ def initialize_table():
 	i = 0
 	lst = ["Mon","Tue","Wed","Thus","Fri","Sat","Sun"]
 	for i in range(0,7):	
-		st = "CREATE TABLE IF NOT EXISTS "+lst[i]+" (lectureNo INT,subject TEXT, time TEXT)"
+		st = "CREATE TABLE IF NOT EXISTS "+lst[i]+" (lectureNo INT,subject TEXT, timestart TEXT, timeend TEXT)"
 		c.execute(st)
 
 
@@ -52,10 +52,11 @@ def insertinto_timetable():
 			c.execute(st)
 			lectureno = input(colored("Input Lecture No: ",'green'))
 			subject = input(colored("Input Subject: ",'green'))
-			time = input(colored("Input Time In 'HH:MM' 24hours Format: ",'green'))
+			timest = input(colored("Input Start Time In 'HH:MM' 24hours Format: ",'green'))
+			timend = input(colored("Input End Time In 'HH:MM' 24hours Format: ", 'green'))
 			#time = input("Input Time In 'HH:MM' 24hours Format: ")
-			st = "INSERT INTO "+lst[i]+" (lectureNo,subject,time) VALUES(?, ?, ?)"
-			c.execute(st,(lectureno, subject, time))
+			st = "INSERT INTO "+lst[i]+" (lectureNo,subject,timestart,timeend) VALUES(?, ?, ?, ?)"
+			c.execute(st,(lectureno, subject, timest, timend))
 			conn.commit()
 
 			display_timetable(lst[i])
@@ -110,11 +111,11 @@ def display_timetable(*week):
 		rows = c.fetchall()
 		print(colored(day+": ","magenta"))
 		for row in rows:
-			print(row[0],row[1],row[2])
+			print(row[0],row[1]," start: ",row[2]," end: ",row[3])
 
 #To delete timetable
 def delete_timetable():
-	lst = ["mon","tue","wed","thus","fri","sat","sun","week"]
+	lst = ["mon","tue","wed","thus","fri","sat","sun"]
 	infin = initial()
 	c = infin[0]
 	conn = infin[1]
@@ -161,3 +162,23 @@ def delete_subject():
 				break
 			else:
 				print("wrong input")
+
+def get_day(day):
+	infin = initial()
+	c = infin[0]
+	conn = infin[1]
+	st = "SELECT * FROM " + day
+	c.execute(st)
+	rows = c.fetchall()
+	return rows
+
+def get_link(lec):
+	infin = initial()
+	c = infin[0]
+	conn = infin[1]
+	st = "SELECT * FROM subject_list"
+	c.execute(st)
+	rows = c.fetchall()
+	for row in rows:
+		if row[0] == lec :
+			return row[1]

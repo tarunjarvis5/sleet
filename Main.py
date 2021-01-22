@@ -1,10 +1,13 @@
 import Start as s
 import Database as db
+import sleet_core as sleet
 from termcolor import colored
 import os
-
 import sys
 os.system('color')
+
+s.start_initial()
+
 
 print(colored("\n#####################################################################\n","red"))
 print("Sorry for the command line interface we are working on UI")
@@ -24,6 +27,7 @@ while True:
 		print(colored("Type 'addtimetable'    or '4' to add subjects to your time-table ",'magenta'))
 		print(colored("Type 'deletetimetable' or '5' to delete anyday's timetable ",'magenta'))
 		print(colored("Type 'deletesubject'   or '6' to delete any subject for subject-list ",'magenta'))
+		print("f to launch sleet : ")
 		print(colored("Type 'exit' 		     to Exit from SLEET \n",'magenta'))
 		#command = input()	 
 		
@@ -48,7 +52,12 @@ while True:
 
 	elif command == "exit" :
 		sys.exit("Bye Bye, That's Rude tho")
-		
+	elif command == "f" :
+		day = input("Enter day")
+		email = input("Enter email : ")
+		password = input("Enter password : ")
+		sleet.sleet_engine(day,email,password)
+
 	else:
 		print("Wrong!!! you literally had to copy the above spelling")
 
