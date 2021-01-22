@@ -43,7 +43,7 @@ while True:
 		db.delete_timetable()
 
 	elif command == "deletesubject" or command == "6" :
-		db.delete_subject_list()
+		db.delete_subject()
 
 	elif command == "exit" :
 		sys.exit("Bye Bye, That's Rude tho")

@@ -136,5 +136,24 @@ def delete_timetable():
 		
 
 
-#def delete_subject():
-		
+def delete_subject():
+		infin = initial()
+		c = infin[0]
+		conn = infin[1]
+		while True:
+			i = input(colored("Do you want to delete subject list: (y/n) ","red"))
+			if i == "y":
+				st = "DROP TABLE IF EXISTS subject_list"
+			#i = input(colored("Enter subject name that you want to delete: ",'red'))
+			#st = "DELETE FROM subject_list WHERE subject = "+i
+				c.execute(st)
+				conn.commit()
+				print("subject list deleted '_' ")
+				initialize_table()
+			#print(i+" deleted '_' ")
+				break
+			elif y == "n":
+				print("Deleted None")
+				break
+			else:
+				print("wrong input")
