@@ -25,7 +25,7 @@ def sleet_engine(day,email,password):
   	})
 	
 	#----------------------------------------------------------------------------------------------------------------------#
-	PATH = "F:\chromedriver.exe"	
+	PATH = "F:\sleet_app\chromedriver.exe"
 	driver = webdriver.Chrome(options=opt, executable_path=PATH)
 
 
@@ -81,13 +81,15 @@ def sleet_engine(day,email,password):
 				while True:
 					total = ((int(timehourend)*60)+int(timeminsend)) - ((int(datetime.datetime.now().hour)*60)+int(datetime.datetime.now().minute))
 
-					if int(total) < 5 :
+					while int(total) < 5 :
 						if datetime.datetime.now().hour == int(timehourend) and datetime.datetime.now().minute == int(timeminsend) :
 							driver.get("https://google.com")
 							time.sleep(10)
 							i = 1
 							break
-					time.sleep(10)
+					if i == 1 :
+						break
+					time.sleep(5)
 			time.sleep(10)
 
-
+	driver.quit()

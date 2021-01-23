@@ -157,7 +157,7 @@ def delete_subject():
 				initialize_table()
 			#print(i+" deleted '_' ")
 				break
-			elif y == "n":
+			elif i == "n":
 				print("Deleted None")
 				break
 			else:
