@@ -25,7 +25,7 @@ def sleet_engine(day,email,password):
   	})
 	
 	#----------------------------------------------------------------------------------------------------------------------#
-	PATH = "F:\sleet_app\chromedriver.exe"
+	PATH = "util\chromedriver.exe"
 	driver = webdriver.Chrome(options=opt, executable_path=PATH)
 
 
@@ -72,9 +72,9 @@ def sleet_engine(day,email,password):
 				driver.get(link)
 				time.sleep(10)
 				pyautogui.hotkey('ctrl', 'd')
-				time.sleep(5)
+				time.sleep(8)
 				pyautogui.hotkey('ctrl','e')
-				time.sleep(5)
+				time.sleep(8)
 				driver.find_element_by_xpath("//*[@id='yDmH0d']/c-wiz/div/div/div[8]/div[3]/div/div/div[2]/div/div[1]/div[2]/div/div[2]/div/div[1]/div[1]").click()
 				time.sleep(20)
 
