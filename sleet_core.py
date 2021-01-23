@@ -90,6 +90,6 @@ def sleet_engine(day,email,password):
 					if i == 1 :
 						break
 					time.sleep(5)
-			time.sleep(10)
+			time.sleep((60*(((int(timehourend)*60)+int(timeminsend)) - ((int(datetime.datetime.now().hour)*60)+int(datetime.datetime.now().minute))))-(4*60))
 
 	driver.quit()
