@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>instruction</class>
+ <widget class="QMainWindow" name="instruction">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>678</width>
+    <height>493</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Sleet</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: black;</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>20</y>
+      <width>111</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(0,0,0,0%);
+color: rgb(121, 121, 121);
+font-size : 50px;
+
+</string>
+    </property>
+    <property name="text">
+     <string>Sleet</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>150</x>
+      <y>50</y>
+      <width>201</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(0,0,0,0%);
+color: rgb(121, 121, 121);
+font-size : 20px;
+
+</string>
+    </property>
+    <property name="text">
+     <string>by Tarun Nair</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_3">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>90</y>
+      <width>531</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(0,0,0,0%);
+color: rgb(35, 255, 1);
+font-size : 15px;
+
+</string>
+    </property>
+    <property name="text">
+     <string>Hello this is Sleet, Sleet allows a user to manage their video conference or meet.</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>120</y>
+      <width>641</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(0,0,0,0%);
+color: rgb(35, 255, 1);
+font-size : 15px;
+
+</string>
+    </property>
+    <property name="text">
+     <string>Sleet currently supports only google-meet, there are two versions of sleet (command-line and UI).</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>150</y>
+      <width>641</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(0,0,0,0%);
+color: rgb(35, 255, 1);
+font-size : 15px;
+
+</string>
+    </property>
+    <property name="text">
+     <string>This is version 1.1 of Sleet</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>180</y>
+      <width>641</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(0,0,0,0%);
+color: rgb(35, 255, 1);
+font-size : 15px;
+
+</string>
+    </property>
+    <property name="text">
+     <string>Many websites do not allow Sleet, worry not *winks in binary* I got a fix.</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_7">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>210</y>
+      <width>641</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(0,0,0,0%);
+color: rgb(35, 255, 1);
+font-size : 15px;
+
+</string>
+    </property>
+    <property name="text">
+     <string>Sleet currently supports only google-meet, there are two versions of sleet (command-line and UI).</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_8">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>240</y>
+      <width>641</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(0,0,0,0%);
+color: rgb(35, 255, 1);
+font-size : 15px;
+
+</string>
+    </property>
+    <property name="text">
+     <string>Ensure to type in correct details otherwise the bot won't run and might fail and do something bad</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_9">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>270</y>
+      <width>641</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(0,0,0,0%);
+color: rgb(35, 255, 1);
+font-size : 15px;
+
+</string>
+    </property>
+    <property name="text">
+     <string>he's a bit dumb or she, I don't know we don't discriminate.</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_10">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>300</y>
+      <width>641</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(0,0,0,0%);
+color: rgb(35, 255, 1);
+font-size : 15px;
+
+</string>
+    </property>
+    <property name="text">
+     <string>Don't worry sleet does not save your details, your credentials will be erased after you close the</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_11">
+    <property name="geometry">
+     <rect>
+      <x>10</x>
+      <y>330</y>
+      <width>641</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(0,0,0,0%);
+color: rgb(35, 255, 1);
+font-size : 15px;
+
+</string>
+    </property>
+    <property name="text">
+     <string>application.</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

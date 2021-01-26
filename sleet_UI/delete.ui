@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>delete_2</class>
+ <widget class="QMainWindow" name="delete_2">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>500</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>600</width>
+    <height>500</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>600</width>
+    <height>500</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Sleet</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">background-color: rgb(47, 47, 47);</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QPushButton" name="instructionbtn_2">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>150</y>
+      <width>191</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+background-color: rgb(156, 72, 33);
+border-color: grey;
+border-radius:10px ;
+border-width:2px;
+border-style:solid;
+font-weight: bold;
+transition: all 0.5s;
+font-size:13px;
+}
+QPushButton:hover{
+
+background-color:rgb(156, 72, 33);
+border-color: white;
+border-width:5px
+
+	
+}
+
+
+</string>
+    </property>
+    <property name="text">
+     <string>Time-Table</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>20</y>
+      <width>111</width>
+      <height>71</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(0,0,0,0%);
+color: rgb(121, 121, 121);
+font-size : 50px;
+
+</string>
+    </property>
+    <property name="text">
+     <string>Sleet</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="instructionbtn_3">
+    <property name="geometry">
+     <rect>
+      <x>90</x>
+      <y>310</y>
+      <width>191</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+background-color: rgb(156, 72, 33);
+border-color: grey;
+border-radius:10px ;
+border-width:2px;
+border-style:solid;
+font-weight: bold;
+transition: all 0.5s;
+font-size:13px;
+}
+QPushButton:hover{
+
+background-color:rgb(156, 72, 33);
+border-color: white;
+border-width:5px
+
+	
+}
+
+
+</string>
+    </property>
+    <property name="text">
+     <string>Subject-List</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="instructionbtn_4">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>150</y>
+      <width>191</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+background-color: rgb(156, 72, 33);
+border-color: grey;
+border-radius:10px ;
+border-width:2px;
+border-style:solid;
+font-weight: bold;
+transition: all 0.5s;
+font-size:13px;
+}
+QPushButton:hover{
+
+background-color:rgb(156, 72, 33);
+border-color: white;
+border-width:5px
+
+	
+}
+
+
+</string>
+    </property>
+    <property name="text">
+     <string>Custom-Day</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="instructionbtn_5">
+    <property name="geometry">
+     <rect>
+      <x>330</x>
+      <y>310</y>
+      <width>191</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+background-color: rgb(156, 72, 33);
+border-color: grey;
+border-radius:10px ;
+border-width:2px;
+border-style:solid;
+font-weight: bold;
+transition: all 0.5s;
+font-size:13px;
+}
+QPushButton:hover{
+
+background-color:rgb(156, 72, 33);
+border-color: white;
+border-width:5px
+
+	
+}
+
+
+</string>
+    </property>
+    <property name="text">
+     <string>Display</string>
+    </property>
+   </widget>
+   <widget class="QPushButton" name="instructionbtn_6">
+    <property name="geometry">
+     <rect>
+      <x>490</x>
+      <y>450</y>
+      <width>91</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">QPushButton{
+background-color: rgb(115, 129, 241);
+border-color: grey;
+border-radius:10px ;
+border-width:2px;
+border-style:solid;
+font-weight: bold;
+transition: all 0.5s;
+font-size:13px;
+}
+QPushButton:hover{
+background-color:rgb(83, 83, 83);
+border-color: black;
+border-width:5px
+
+	
+}
+
+
+</string>
+    </property>
+    <property name="text">
+     <string>Back</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_2">
+    <property name="geometry">
+     <rect>
+      <x>270</x>
+      <y>80</y>
+      <width>71</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgba(0,0,0,0%);
+color: rgb(121, 121, 121);
+font-size : 25px;
+
+</string>
+    </property>
+    <property name="text">
+     <string>Delete</string>
+    </property>
+   </widget>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
