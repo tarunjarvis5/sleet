@@ -10,8 +10,38 @@
 
 from PyQt5 import QtCore, QtGui, QtWidgets
 
-
 class Ui_funtion(object):
+
+#  To open disclaimer
+    def open_start(self):
+        from start import Ui_start
+        self.window = QtWidgets.QMainWindow()
+        self.ui = Ui_start()
+        self.ui.setupUi(self.window)
+        self.window.show()
+
+
+    def open_add(self):
+        from add import Ui_add
+        self.window = QtWidgets.QMainWindow()
+        self.ui = Ui_add()
+        self.ui.setupUi(self.window)
+        self.window.show()
+
+    def open_delete(self):
+        from delete import Ui_delete_2
+        self.window = QtWidgets.QMainWindow()
+        self.ui = Ui_delete_2()
+        self.ui.setupUi(self.window)
+        self.window.show()
+
+    def open_loginpage(self):
+        from loginpage import Ui_MainWindow
+        self.window = QtWidgets.QMainWindow()
+        self.ui = Ui_MainWindow()
+        self.ui.setupUi(self.window)
+        self.window.show()
+
     def setupUi(self, funtion):
         funtion.setObjectName("funtion")
         funtion.resize(700, 500)
@@ -75,6 +105,10 @@ class Ui_funtion(object):
 "\n"
 "")
         self.instructionbtn_3.setObjectName("instructionbtn_3")
+
+        self.instructionbtn_3.clicked.connect(self.open_delete)
+        self.instructionbtn_3.clicked.connect(funtion.close)
+
         self.instructionbtn_4 = QtWidgets.QPushButton(self.centralwidget)
         self.instructionbtn_4.setGeometry(QtCore.QRect(250, 340, 191, 41))
         self.instructionbtn_4.setStyleSheet("QPushButton{\n"
@@ -100,6 +134,10 @@ class Ui_funtion(object):
 "\n"
 "")
         self.instructionbtn_4.setObjectName("instructionbtn_4")
+
+        self.instructionbtn_4.clicked.connect(self.open_loginpage)
+        self.instructionbtn_4.clicked.connect(funtion.close)
+
         self.instructionbtn_5 = QtWidgets.QPushButton(self.centralwidget)
         self.instructionbtn_5.setGeometry(QtCore.QRect(250, 170, 191, 41))
         self.instructionbtn_5.setStyleSheet("QPushButton{\n"
@@ -123,6 +161,10 @@ class Ui_funtion(object):
 "\n"
 "")
         self.instructionbtn_5.setObjectName("instructionbtn_5")
+
+        self.instructionbtn_5.clicked.connect(self.open_add)
+        self.instructionbtn_5.clicked.connect(funtion.close)
+
         self.instructionbtn_6 = QtWidgets.QPushButton(self.centralwidget)
         self.instructionbtn_6.setGeometry(QtCore.QRect(590, 450, 91, 31))
         self.instructionbtn_6.setStyleSheet("QPushButton{\n"
@@ -146,6 +188,10 @@ class Ui_funtion(object):
 "\n"
 "")
         self.instructionbtn_6.setObjectName("instructionbtn_6")
+
+        self.instructionbtn_6.clicked.connect(self.open_start)
+        self.instructionbtn_6.clicked.connect(funtion.close)
+
         funtion.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(funtion)

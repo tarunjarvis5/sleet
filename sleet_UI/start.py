@@ -9,12 +9,12 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from function import Ui_funtion
+#from function import Ui_funtion
 from instruction import Ui_instruction
 from disclaimer import Ui_disclaimer
 
 class Ui_start(object):
-    
+
 #  To open disclaimer
     def open_disclaimer(self):
         self.window = QtWidgets.QMainWindow()
@@ -31,11 +31,12 @@ class Ui_start(object):
 
 #  To open function
     def open_function(self):
+        from function import Ui_funtion
         self.window = QtWidgets.QMainWindow()
         self.ui = Ui_funtion()
         self.ui.setupUi(self.window)
-        start.hide()
         self.window.show()
+
 
     def setupUi(self, start):
         start.setObjectName("start")
@@ -106,6 +107,7 @@ class Ui_start(object):
         self.loginbtn.setObjectName("loginbtn")
 
         self.loginbtn.clicked.connect(self.open_function)
+        self.loginbtn.clicked.connect(start.close)
 
         self.instructionbtn_2 = QtWidgets.QPushButton(self.centralwidget)
         self.instructionbtn_2.setGeometry(QtCore.QRect(20, 430, 111, 41))
