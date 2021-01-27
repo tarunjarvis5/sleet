@@ -20,6 +20,20 @@ class Ui_add(object):
         self.ui.setupUi(self.window)
         self.window.show()
 
+    def open_addsubject(self):
+        from addsubject import Ui_addsubject
+        self.window = QtWidgets.QMainWindow()
+        self.ui = Ui_addsubject()
+        self.ui.setupUi(self.window)
+        self.window.show()
+
+    def open_addtimetable(self):
+        from addtimetable import Ui_addtimetable
+        self.window = QtWidgets.QMainWindow()
+        self.ui = Ui_addtimetable()
+        self.ui.setupUi(self.window)
+        self.window.show()
+
     def display(self):
         from display_timetable import Ui_time_table
         self.window = QtWidgets.QMainWindow()
@@ -59,6 +73,10 @@ class Ui_add(object):
 "\n"
 "")
         self.instructionbtn_2.setObjectName("instructionbtn_2")
+
+        self.instructionbtn_2.clicked.connect(self.open_addtimetable)
+        self.instructionbtn_2.clicked.connect(add.close)
+
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(30, 20, 111, 71))
         self.label.setStyleSheet("background-color: rgba(0,0,0,0%);\n"
@@ -91,6 +109,10 @@ class Ui_add(object):
 "\n"
 "")
         self.instructionbtn_3.setObjectName("instructionbtn_3")
+
+        self.instructionbtn_3.clicked.connect(self.open_addsubject)
+        self.instructionbtn_3.clicked.connect(add.close)
+
         self.instructionbtn_4 = QtWidgets.QPushButton(self.centralwidget)
         self.instructionbtn_4.setGeometry(QtCore.QRect(330, 150, 191, 41))
         self.instructionbtn_4.setStyleSheet("QPushButton{\n"

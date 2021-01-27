@@ -14,27 +14,27 @@ import sleet_database
 class Ui_time_table(object):
 
     def get_database_timetable(self):
-        st = "Monday"
+        st = "Mon"
         if self.radioButton.isChecked():
             st = self.radioButton.text()
-        if self.radioButton_2.isChecked():
+        elif self.radioButton_2.isChecked():
             st = self.radioButton_2.text()
-        if self.radioButton_3.isChecked():
+        elif self.radioButton_3.isChecked():
             st = self.radioButton_3.text()
-        if self.radioButton_4.isChecked():
+        elif self.radioButton_4.isChecked():
             st = self.radioButton_4.text()
-        if self.radioButton_5.isChecked():
+        elif self.radioButton_5.isChecked():
             st = self.radioButton_5.text()
-        if self.radioButton_6.isChecked():
+        elif self.radioButton_6.isChecked():
             st = self.radioButton_6.text()
-        if self.radioButton_7.isChecked():
+        elif self.radioButton_7.isChecked():
             from display_subject import Ui_subject_table
             self.window = QtWidgets.QMainWindow()
             self.ui = Ui_subject_table()
             self.ui.setupUi(self.window)
             self.window.show()
 
-
+        st = st.lower()
         rows = sleet_database.timetable(st[:3])
         self.tableWidget.setRowCount(len(rows))
         for i in range(len(rows)):
@@ -117,7 +117,9 @@ class Ui_time_table(object):
         self.radioButton_7.setObjectName("radioButton_7")
         self.radioButton_7.toggled.connect(self.get_database_timetable)
         self.radioButton_7.toggled.connect(time_table.close)
-
+        self.tableWidget.setColumnWidth(0, 213)
+        self.tableWidget.setColumnWidth(1, 213)
+        self.tableWidget.setColumnWidth(2, 213)
         self.retranslateUi(time_table)
         QtCore.QMetaObject.connectSlotsByName(time_table)
 

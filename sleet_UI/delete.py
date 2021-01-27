@@ -9,9 +9,19 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
+import sleet_database
 
 class Ui_delete_2(object):
+
+    def delete_subjectlist(self):
+        sleet_database.delete_subject()
+
+    def open_deletetimetable(self):
+        from deletetimetable import Ui_delete_day
+        self.window = QtWidgets.QMainWindow()
+        self.ui = Ui_delete_day()
+        self.ui.setupUi(self.window)
+        self.window.show()
 
     def open_function(self):
         from function import Ui_funtion
@@ -59,6 +69,10 @@ class Ui_delete_2(object):
 "\n"
 "")
         self.instructionbtn_2.setObjectName("instructionbtn_2")
+
+        self.instructionbtn_2.clicked.connect(self.open_deletetimetable)
+        self.instructionbtn_2.clicked.connect(delete_2.close)
+
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(30, 20, 111, 71))
         self.label.setStyleSheet("background-color: rgba(0,0,0,0%);\n"
@@ -91,6 +105,9 @@ class Ui_delete_2(object):
 "\n"
 "")
         self.instructionbtn_3.setObjectName("instructionbtn_3")
+
+        self.instructionbtn_3.clicked.connect(self.delete_subjectlist)
+
         self.instructionbtn_4 = QtWidgets.QPushButton(self.centralwidget)
         self.instructionbtn_4.setGeometry(QtCore.QRect(330, 150, 191, 41))
         self.instructionbtn_4.setStyleSheet("QPushButton{\n"
