@@ -55,7 +55,7 @@
     <property name="geometry">
      <rect>
       <x>180</x>
-      <y>190</y>
+      <y>140</y>
       <width>249</width>
       <height>44</height>
      </rect>
@@ -80,7 +80,7 @@ padding-top : 5px;</string>
     <property name="geometry">
      <rect>
       <x>180</x>
-      <y>250</y>
+      <y>200</y>
       <width>251</width>
       <height>41</height>
      </rect>
@@ -105,7 +105,7 @@ font-size:20px;
     <property name="geometry">
      <rect>
       <x>200</x>
-      <y>310</y>
+      <y>320</y>
       <width>51</width>
       <height>51</height>
      </rect>
@@ -185,6 +185,31 @@ border-width:5px
     </property>
     <property name="text">
      <string>Back</string>
+    </property>
+   </widget>
+   <widget class="QTextEdit" name="textEdit_3">
+    <property name="enabled">
+     <bool>true</bool>
+    </property>
+    <property name="geometry">
+     <rect>
+      <x>190</x>
+      <y>260</y>
+      <width>191</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:1 rgba(50, 50, 50, 255));
+border-radius : 20px;
+ 
+color: rgb(255, 255, 255);
+font-size:20px;
+padding-left:30px;
+padding-top : 5px;</string>
+    </property>
+    <property name="placeholderText">
+     <string>Day</string>
     </property>
    </widget>
   </widget>
