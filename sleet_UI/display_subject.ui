@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>subject_table</class>
+ <widget class="QDialog" name="subject_table">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>700</width>
+    <height>500</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>700</width>
+    <height>500</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>700</width>
+    <height>500</height>
+   </size>
+  </property>
+  <property name="windowTitle">
+   <string>Sleet</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+background-color:qradialgradient(spread:pad, cx:0.5, cy:0.5, radius:0.5, fx:0.504049, fy:0.523, stop:0 rgba(109, 108, 104, 255), stop:1 rgba(50, 50, 50, 255));</string>
+  </property>
+  <widget class="QTableWidget" name="tableWidget">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>160</y>
+     <width>641</width>
+     <height>311</height>
+    </rect>
+   </property>
+   <property name="minimumSize">
+    <size>
+     <width>0</width>
+     <height>0</height>
+    </size>
+   </property>
+   <property name="maximumSize">
+    <size>
+     <width>99999</width>
+     <height>99999</height>
+    </size>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:black;
+background-color:rgb(99, 99, 99)</string>
+   </property>
+   <column>
+    <property name="text">
+     <string>Subject</string>
+    </property>
+   </column>
+   <column>
+    <property name="text">
+     <string>Link</string>
+    </property>
+   </column>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>10</y>
+     <width>111</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">background-color: rgba(0,0,0,0%);
+color: grey;
+font-size : 50px;
+
+</string>
+   </property>
+   <property name="text">
+    <string>Sleet</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

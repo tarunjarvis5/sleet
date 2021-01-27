@@ -28,6 +28,13 @@ class Ui_funtion(object):
         self.ui.setupUi(self.window)
         self.window.show()
 
+    def display(self):
+        from display_timetable import Ui_time_table
+        self.window = QtWidgets.QMainWindow()
+        self.ui = Ui_time_table()
+        self.ui.setupUi(self.window)
+        self.window.show()
+
     def open_delete(self):
         from delete import Ui_delete_2
         self.window = QtWidgets.QMainWindow()
@@ -74,6 +81,9 @@ class Ui_funtion(object):
 "\n"
 "")
         self.instructionbtn_2.setObjectName("instructionbtn_2")
+
+        self.instructionbtn_2.clicked.connect(self.display)
+
         self.label = QtWidgets.QLabel(self.centralwidget)
         self.label.setGeometry(QtCore.QRect(30, 20, 111, 71))
         self.label.setStyleSheet("background-color: rgba(0,0,0,0%);\n"

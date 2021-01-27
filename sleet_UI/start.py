@@ -9,11 +9,14 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-#from function import Ui_funtion
+import sleet_database
 from instruction import Ui_instruction
 from disclaimer import Ui_disclaimer
+import os
 
 class Ui_start(object):
+
+
 
 #  To open disclaimer
     def open_disclaimer(self):
@@ -150,6 +153,7 @@ class Ui_start(object):
 
 if __name__ == "__main__":
     import sys
+    sleet_database.initialize_table()
     app = QtWidgets.QApplication(sys.argv)
     start = QtWidgets.QMainWindow()
     ui = Ui_start()

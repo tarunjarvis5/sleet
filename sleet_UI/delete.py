@@ -20,6 +20,13 @@ class Ui_delete_2(object):
         self.ui.setupUi(self.window)
         self.window.show()
 
+    def display(self):
+        from display_timetable import Ui_time_table
+        self.window = QtWidgets.QMainWindow()
+        self.ui = Ui_time_table()
+        self.ui.setupUi(self.window)
+        self.window.show()
+
     def setupUi(self, delete_2):
         delete_2.setObjectName("delete_2")
         delete_2.resize(600, 500)
@@ -132,6 +139,9 @@ class Ui_delete_2(object):
 "\n"
 "")
         self.instructionbtn_5.setObjectName("instructionbtn_5")
+
+        self.instructionbtn_5.clicked.connect(self.display)
+
         self.instructionbtn_6 = QtWidgets.QPushButton(self.centralwidget)
         self.instructionbtn_6.setGeometry(QtCore.QRect(490, 450, 91, 31))
         self.instructionbtn_6.setStyleSheet("QPushButton{\n"
