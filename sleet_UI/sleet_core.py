@@ -2,6 +2,7 @@ import sleet_database as db
 import time
 import datetime
 import pyautogui
+
 #from selenium.webdriver.chrome.options import Options
 from selenium import webdriver
 #subject_name, link, lecture_time, day, email, password
@@ -65,15 +66,20 @@ def sleet_engine(day,email,password):
 		i = 0
 		while True:
 
+			if ((60 * (((int(timehourstart) * 60) + int(timeminstart)) - ((int(datetime.datetime.now().hour) * 60) + int(datetime.datetime.now().minute)))) - (4 * 60) ) > 5:
+				time.sleep((60 * (((int(timehourstart) * 60) + int(timeminstart)) - ((int(datetime.datetime.now().hour) * 60) + int(datetime.datetime.now().minute)))) - (4 * 60))
 			if i == 1 :
 				break
 			if datetime.datetime.now().hour == int(timehourstart) and datetime.datetime.now().minute == int(timeminstart) :
 				
 				driver.get(link)
 				time.sleep(10)
-				pyautogui.hotkey('ctrl', 'd')
+				#pyautogui.hotkey('ctrl', 'd')
+				#mic
+				driver.find_element_by_xpath('/html/body/div[1]/c-wiz/div/div/div[8]/div[3]/div/div/div[2]/div/div[1]/div[1]/div[1]/div/div[3]/div[1]/div/div/div').click()
 				time.sleep(8)
-				pyautogui.hotkey('ctrl','e')
+				#cam
+				driver.find_element_by_xpath("/html/body/div[1]/c-wiz/div/div/div[8]/div[3]/div/div/div[2]/div/div[1]/div[1]/div[1]/div/div[3]/div[2]/div/div").click()
 				time.sleep(8)
 				driver.find_element_by_xpath("//*[@id='yDmH0d']/c-wiz/div/div/div[8]/div[3]/div/div/div[2]/div/div[1]/div[2]/div/div[2]/div/div[1]/div[1]").click()
 				time.sleep(20)

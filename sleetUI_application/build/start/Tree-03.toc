@@ -1,6 +1,6 @@
 ('c:\\python\\python38\\lib\\site-packages\\pyinstaller-5.0.dev0-py3.8.egg',
  None,
- {'*.pyc', '*.py', 'EGG-INFO', '*.cp38-win_amd64.pyd', '*.pyd', '*.pyw'},
+ {'EGG-INFO', '*.pyw', '*.cp38-win_amd64.pyd', '*.pyc', '*.pyd', '*.py'},
  'DATA',
  [('PyInstaller\\utils\\pytest.ini',
    'c:\\python\\python38\\lib\\site-packages\\pyinstaller-5.0.dev0-py3.8.egg\\PyInstaller\\utils\\pytest.ini',
