@@ -1,21 +1,29 @@
-# sleet
+# Sleet
 
-Sleet is google-meet time-line manager and automater for students.
+Sleet is automated system to store and run online-timetable for students.
+Sleet for now only supports google-meet
 
+## Requirements :
+	
+	Chrome browser
+	Stackoverflow account signed up using you google-id which you will you for your google-meet
+	 
 ## How to run sleet :
 
-  ######Using command-line
+###### There are two versions of Sleet (commandline-coded and user-interface) :
+
+       * Using user-interface version or SleetUI :
+	  
+	  1.Clone the repository	
+	  2.Go to sleetUI_application > dist > Sleet.exe
+
+       * Using command-line version :
 
 	1. Clone the repository 
-	2. Go to the directory using command line
-	3. type in : python main.py
+	2. Go to the directory > sleet_commandline
+	3. python main.py
 
-  ######Using .exe 
-	
-	1. Double click the sleet.exe file
-
-###### Language used : Python
-###### Tech-used : Sqlite(database) , Selenium(automation) , Termcolor(formating)
+#Enjoy!!
 
 Please read the disclaimer in the script
 Creator/Owner of this script is not responsible for any misuse or illegal doing. 	
