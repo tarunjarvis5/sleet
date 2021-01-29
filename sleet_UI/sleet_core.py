@@ -5,6 +5,8 @@ import pyautogui
 
 #from selenium.webdriver.chrome.options import Options
 from selenium import webdriver
+from selenium.webdriver import ActionChains
+from selenium.webdriver.common.keys import Keys
 #subject_name, link, lecture_time, day, email, password
 
 
@@ -65,8 +67,9 @@ def sleet_engine(day,email,password):
 		#print(timeminsend)
 		i = 0
 		while True:
-
+			#print(datetime.datetime.now().minute)
 			if ((60 * (((int(timehourstart) * 60) + int(timeminstart)) - ((int(datetime.datetime.now().hour) * 60) + int(datetime.datetime.now().minute)))) - (4 * 60) ) > 5:
+				#print(((60 * (((int(timehourstart) * 60) + int(timeminstart)) - ((int(datetime.datetime.now().hour) * 60) + int(datetime.datetime.now().minute)))) - (4 * 60) ))
 				time.sleep((60 * (((int(timehourstart) * 60) + int(timeminstart)) - ((int(datetime.datetime.now().hour) * 60) + int(datetime.datetime.now().minute)))) - (4 * 60))
 			if i == 1 :
 				break
@@ -74,12 +77,12 @@ def sleet_engine(day,email,password):
 				
 				driver.get(link)
 				time.sleep(10)
-				#pyautogui.hotkey('ctrl', 'd')
-				#mic
-				driver.find_element_by_xpath('/html/body/div[1]/c-wiz/div/div/div[8]/div[3]/div/div/div[2]/div/div[1]/div[1]/div[1]/div/div[3]/div[1]/div/div/div').click()
-				time.sleep(8)
-				#cam
-				driver.find_element_by_xpath("/html/body/div[1]/c-wiz/div/div/div[8]/div[3]/div/div/div[2]/div/div[1]/div[1]/div[1]/div/div[3]/div[2]/div/div").click()
+				#mic and camera
+				a = ActionChains(driver)
+				a.key_down(Keys.CONTROL).send_keys('e').key_up(Keys.CONTROL).perform()
+				time.sleep(2)
+				b = ActionChains(driver)
+				b.key_down(Keys.CONTROL).send_keys('d').key_up(Keys.CONTROL).perform()
 				time.sleep(8)
 				driver.find_element_by_xpath("//*[@id='yDmH0d']/c-wiz/div/div/div[8]/div[3]/div/div/div[2]/div/div[1]/div[2]/div/div[2]/div/div[1]/div[1]").click()
 				time.sleep(20)

@@ -14,7 +14,7 @@ import sleet_database
 class Ui_time_table(object):
 
     def get_database_timetable(self):
-        st = "Mon"
+        st = ""
         if self.radioButton.isChecked():
             st = self.radioButton.text()
         elif self.radioButton_2.isChecked():
@@ -33,14 +33,14 @@ class Ui_time_table(object):
             self.ui = Ui_subject_table()
             self.ui.setupUi(self.window)
             self.window.show()
-
-        st = st.lower()
-        rows = sleet_database.timetable(st[:3])
-        self.tableWidget.setRowCount(len(rows))
-        for i in range(len(rows)):
-            self.tableWidget.setItem(i, 0, QtWidgets.QTableWidgetItem(rows[i][0]))
-            self.tableWidget.setItem(i, 1, QtWidgets.QTableWidgetItem(rows[i][1]))
-            self.tableWidget.setItem(i, 2, QtWidgets.QTableWidgetItem(rows[i][2]))
+        if st != "" :
+            st = st.lower()
+            rows = sleet_database.timetable(st[:3])
+            self.tableWidget.setRowCount(len(rows))
+            for i in range(len(rows)):
+                self.tableWidget.setItem(i, 0, QtWidgets.QTableWidgetItem(rows[i][0]))
+                self.tableWidget.setItem(i, 1, QtWidgets.QTableWidgetItem(rows[i][1]))
+                self.tableWidget.setItem(i, 2, QtWidgets.QTableWidgetItem(rows[i][2]))
 
 
     def setupUi(self, time_table):
